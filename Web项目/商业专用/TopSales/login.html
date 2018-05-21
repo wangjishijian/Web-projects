@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="A fully featured admin theme which can be used to build CRM, CMS, etc.">
+        <meta name="author" content="Coderthemes">
+
+        <!-- App Favicon -->
+<!--         <link rel="shortcut icon" href="assets/images/favicon.ico"> -->
+		
+		<link href="images/newlog.ico" rel="shortcut icon"><!-- 图标 -->
+        <!-- App title -->
+        <title>TopSales - All for one, one for all.</title>
+
+        <!-- App CSS -->
+        <link href="css/login/bootstrap.min.css" rel="stylesheet" type="text/css">
+        <link href="css/login/core.css" rel="stylesheet" type="text/css">
+        <link href="css/login/components.css" rel="stylesheet" type="text/css">
+        <link href="css/login/icons.css" rel="stylesheet" type="text/css">
+        <link href="css/login/pages.css" rel="stylesheet" type="text/css">
+        <link href="css/login/menu.css" rel="stylesheet" type="text/css">
+        <link href="css/login/responsive.css" rel="stylesheet" type="text/css">
+        <link href="lib/drag/drag.css" rel="stylesheet" type="text/css">
+		<link href="lib/sweetalert/dist/sweetalert.css" rel="stylesheet"><!-- 提示框 -->
+    </head>
+    <body onkeydown="keyUp();">
+
+        <div class="account-pages"></div>
+        <div class="clearfix"></div>
+        <div class="wrapper-page">
+            <div class="text-center">
+                <a href="index.html" class="logo" style="font-weight: 700;"><span>Top<span>Sales</span></span></a>
+                <h5 class="text-muted m-t-0 font-600">All for one, one for all.</h5>
+            </div>
+        	<div class="m-t-40 card-box">
+                <div class="text-center">
+                    <h4 class="text-uppercase font-bold m-b-0">会员登录</h4>
+                </div>
+                <div class="panel-body">
+                    <form class="form-horizontal m-t-20" action="" method="post">
+
+                        <div class="form-group ">
+                            <div class="col-xs-12">
+                                <input class="form-control" type="text" id="mobile" required="" onkeyup="keyUp()" placeholder="手机号">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-xs-12">
+                                <input class="form-control" type="password" id="password" required="" onkeyup="keyUp()" placeholder="密码">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group ">
+							<div class="col-xs-12">
+								<div id="drag" onkeyup="keyUp()"></div>
+							</div>
+						</div>
+						
+                        <div class="form-group">
+							<div class="col-xs-12">
+								<div class="checkbox checkbox-custom">
+									<input id="checkbox-signup" type="checkbox" checked="checked">
+									<label for="checkbox-signup">我同意 <a href="#">应用服务协议</a></label>
+								</div>
+							</div>
+						</div>
+
+                        <div class="form-group text-center m-t-30">
+                            <div class="col-xs-12">
+                                <!-- <button class="btn btn-custom btn-bordred btn-block waves-effect waves-light" type="button"  onclick="login();">登录</button> -->
+                            	<button class="btn btn-custom btn-bordred btn-block waves-effect waves-light" type="button" onclick="login2();">登录</button>
+                            </div>
+                        </div>
+
+                        <div class="form-group m-t-30 m-b-0">
+                            <div class="col-sm-12">
+                            	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            	<a href="shortcut.html" class="text-muted"><i class="fa fa-lock m-r-5"></i> 快捷登录</a>&nbsp; |&nbsp;
+                                <a href="recoverpw.html" class="text-muted"><i class="fa fa-lock m-r-5"></i> 忘记密码?</a>&nbsp; |&nbsp; 
+								<a href="register.html" class="text-muted"><i class="fa fa-lock m-r-5"></i> 注册新账户</a> 
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+            <!-- end card-box-->
+        </div>
+        <!-- end wrapper page -->
+        <script type="text/javascript" src="lib/jquery/jquery.min.js"></script>
+        <script type="text/javascript" src="lib/drag/drag.js"></script>
+        <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+        <script src="lib/sweetalert/dist/sweetalert.min.js"></script>
+        <script src="lib/sweetalert/sweet.js"></script>
+       	<script src="lib/layer/layer.js"></script>   <!--layer提示框-->
+        <script src="js/common/storage.com.js"></script>
+        <script src="js/common.js"></script>
+        <script src="js/common/login.js"></script> 
+        <script src="js/judgeVersion.js"></script><!-- 判断浏览器版本 -->    
+    	<script>
+            var resizefunc = [];
+            $('#drag').drag();
+			
+            function login2(){
+            	window.location.href="index.html";
+            }
+            
+        </script>
+
+	</body>
+</html>

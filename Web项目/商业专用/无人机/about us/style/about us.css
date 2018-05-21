@@ -1,0 +1,55 @@
+@charset = "utf-8";
+
+header{
+	height: 60px;
+	width: 80%;
+	background: gainsboro;
+	margin-left: 10%;
+}
+
+a{
+	text-decoration: none;
+}
+
+h3{
+	color: black;
+	line-height: 60px;
+	margin-left: 13%;
+}
+.shuxian{
+	float: left;
+	margin-top: -62px;
+	margin-left: 8%;
+}
+
+section{
+	margin-top: 60px;
+}
+.person{
+	margin-left: 10%;
+	width: 25%;
+}
+.text{
+	margin-top: -480px;
+	margin-left: 40%;
+	font-size: 2em;
+	line-height: 60px
+
+}
+.more{
+	width: 25%;
+	margin-left:55%;
+
+}
+.wechat{
+	margin-left:370px;
+	width: 5%
+
+}
+.weibo{
+	margin-left: 250px;
+	width: 5%;
+
+
+}
+	

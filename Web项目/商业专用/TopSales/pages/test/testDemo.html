@@ -1,0 +1,12 @@
+<div>
+	<input type="text" ng-model="countryName" /><input type="button" ng-click="dianji()" value="点击搜索" />
+	
+	<input type="button" ng-click="model()" value="点击我弹出框" />
+	<ul ng-repeat="item in boxList">
+		<li>{{item.countryName}}</li>
+		<li>{{item.nameCn}}</li>
+	</ul>
+	 <!-- 分页 -->
+	 <nav pagination-bar class="col-md-12 text-right" data="pageData"></nav>
+</div>
+

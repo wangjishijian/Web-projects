@@ -1,0 +1,146 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>index</title>
+    <meta charset="utf-8">
+    <meta name="Author" content="潭州学院-海牙">
+    <style type='text/css'>
+        * { margin: 0; padding: 0; }
+
+        a { text-decoration: none; color: #333333; }
+
+        ul, li { list-style: none; }
+
+        body { font-size: 14px; font-family: "微软雅黑"; background: #336688; }
+
+        .ml15 { margin-left: 15px; }
+
+        .mr15 { margin-right: 15px; }
+
+        .container { margin: 30px auto; position: relative; width: 100%; }
+
+        .movie { width: 200px; display: flex; flex-direction: column; box-shadow: 1px 1px 1em #dddddd; position: absolute; top: 0; left: 0; transition: 1s; }
+
+        .movie img, .movie a { display: block; }
+
+        .movie .year { height: 30px; line-height: 30px; background: #f7e9ee; display: flex; justify-content: space-between; }
+
+        .movie .year span { text-align: right; }
+
+        .movie .movie_info { display: flex; justify-content: space-between; background: #f7e9ee; padding-bottom: 5px; }
+    </style>
+
+
+</head>
+<body>
+<div class="container">
+
+</div>
+<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.js"></script>
+<script>
+    /*
+     url: http://api.douban.com/v2/movie/top250?start=0&count=20
+
+     */
+    var url = 'http://api.douban.com/v2/movie/top250';
+    var cache = []; //缓存池子;
+    var start = 0; //起始数据
+    var width = 200; //宽度
+    var space = 10; //间隙
+    var outerWidth = width + space;
+    var toggle = false; //加载开关
+    var first = true; //初次加载
+    var oContainer = document.querySelector('.container');
+    cells();
+    var arrTop = [];  //当前行数组 top
+    var arrLeft = []; //当前行数组 left
+    var lastDom = null;
+    for (var i = 0; i < num; i++) {
+        arrTop.push(0); //初始都为0
+        arrLeft.push(i * outerWidth);
+    }
+    function cells() { //初始化宽高
+        num = Math.floor(window.innerWidth / outerWidth);
+        oContainer.style.width = num * outerWidth - space + 'px';
+    }
+    function getProcessData(param) {
+        // 'http://api.douban.com/v2/movie/top250?start=0&count=20'
+        $.ajax({
+            url: param.url,
+            data: param.data,
+            dataType: 'jsonp',
+            success: function (data) {
+                param['callBack'] && param['callBack'](data.subjects);
+            }
+        });
+    }
+    getProcessData({
+        url: url + '?start=' + start + '&count=20',
+        callBack: function (data) {
+            var movie = getMoiveData(data);
+            formatData(movie);
+        }
+    });
+    //数据整理
+    function getMoiveData(data) {
+        var movie = [];
+        data.forEach(function (item) {
+            movie.push({
+                title: item.title,   //翻译名
+                year: item.year,     //年份
+                score: item.rating.average,  //评分,
+                coverImg: item.images.large, //图片路径,
+                alt: item.alt||'#',       //url地址
+                original_title: item.original_title // 原名
+            })
+        });
+        return movie;
+    }
+    //数据渲染 递归
+    function formatData(data) {
+        var length = data.length;
+        var i = 0;
+        ~function recur() {
+            var minIndex = arrTop.indexOf(Math.min(...arrTop));
+            var item = data[i]
+            var oDiv = document.createElement('div'); //创建div
+            oDiv.className = 'movie';                 //div初始化
+            oDiv.style.left = oDiv.style.top = 0 + 'px';
+            oDiv.innerHTML = `<a href="${item.alt}" target="blank"><img class="pic" src="${item.coverImg}" width=200 height =auto /></a><p class="year"><i class="ml15">${item.year}</i><span class="mr15">${item.original_title}</span></p><p class="movie_info"><span class="title ml15">${item.title}</span><span class="score mr15">${item.score}分</span></p>`;
+            oContainer.appendChild(oDiv); //添加到container中
+            oDiv.querySelector('.pic').onload = function () { //图片加载完成之后
+                oDiv.style.left = arrLeft[minIndex] + 'px'; //设置left为最小项
+                oDiv.style.top = arrTop[minIndex] + 'px';
+                arrTop[minIndex] += oDiv.offsetHeight + 2 * space; //设置top 最小项累加当前元素的高度+上下间隙
+                i++;
+                if (i === (length - 1)) {//存储最后一个oDiv
+                    lastDom = oDiv;
+                    toggle = true;
+                    first = false;
+                }
+                (i < length) && recur();
+            }
+        }();//递归执行
+        start += 20;
+        getProcessData({
+            url: url + '?start=' + start + '&count=20',
+            callBack: function (data) {
+                cache = [];  //清空缓存
+                var movie = getMoiveData(data);
+                cache = movie;
+            }
+        });
+    }
+    window.addEventListener('scroll', function () {
+        if (toggle) {
+            var sheight = document.body.scrollTop + window.innerHeight; //滚动高度+浏览器高度
+            var lastIndexHeight = lastDom.offsetTop + (lastDom.offsetHeight / 2); //最后一个div 的参数
+            if (lastIndexHeight < sheight) {
+                toggle = false;
+                formatData(cache);
+            }
+        }
+    });
+</script>
+</body>
+</html>

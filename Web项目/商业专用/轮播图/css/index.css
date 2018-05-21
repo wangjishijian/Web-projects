@@ -1,0 +1,69 @@
+@charset = "UTF-8";
+*{
+	margin: 0px；
+	padding:0px;
+	list-style:none;
+}
+
+body{
+	background: #ccc;
+	background-size: cover;/*使得图片填满整个屏幕*/
+}
+
+#box{
+	border: 1px solid;
+	overflow: hidden;/*避免图片溢出box*/
+	width: 720px;
+	height: 410px;
+	margin: 100px auto;
+	position: relative;/*设置定位一般父相对子绝对*/
+
+}
+
+#box .menu{
+	margin-top: -16px;
+	margin-left: -40px;
+	width: 600%;
+	position: absolute;	
+}
+
+#box .menu ul li{
+	float: left;
+}
+
+#box .pave-ul{
+	width: 180px;
+	height: 20px;
+	position: absolute;
+	bottom: 15px;
+	left: 275px;
+
+}
+
+
+#box .pave-ul ul{
+	position: absolute;
+	margin: 3px auto;
+}
+
+#box .pave-ul li{
+	opacity: 0.5;
+	background: #ccc;
+	width: 10px;
+	height: 10px;
+	border: 1px solid;
+	float: left;
+	cursor: pointer;
+	margin: 0px 2px;
+	border-radius: 100%
+}
+
+#box .pave-ul ul li:hover{
+	opacity: 1;
+	background: #888;
+}
+
+#box .pave-ul ul li.act{
+	opacity: 1;
+	background: #888;
+}

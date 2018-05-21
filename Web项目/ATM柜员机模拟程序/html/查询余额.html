@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>查询余额</title>
+	<link href="../css/style.css" rel="stylesheet" type="text/css" media="all" />
+	<script src="../js/jquery.min.js"></script>
+	<script src="../js/easyResponsiveTabs.js" type="text/javascript"></script>
+</head>
+<<body>
+	<!-- main -->
+	<div class="main">
+		<h1>余额查询</h1>
+		<div class="login-form">
+			<div class="sap_tabs w3ls-tabs">
+			<a href="../index.html"><p>首页</p></a>
+				<div id="horizontalTab" style="display: block; width: 100%; margin: 0px;">
+					<ul class="resp-tabs-list">
+						<li class="resp-tab-item" aria-controls="tab_item-0" role="tab"></li> 
+						<li class="resp-tab-item" aria-controls="tab_item-1" role="tab"></li>
+					</ul>	
+					<div class="clear"> </div>
+					<div class="resp-tabs-container">
+						<div class="tab-1 resp-tab-content" aria-labelledby="tab_item-0">
+							<div class="login-agileits-top"> 
+
+								<form action="#" method="post">
+									<p>请输入您的卡号</p>
+									<input type="text" name="User Name" required="" placeholder="初始账号：123456">
+									<p>请输入您的密码</p>
+									<input type="password" name="Password" required=""  placeholder="初始密码：123456">	 
+									<input type="checkbox" id="brand" value="">
+									<label for="brand"></label> 
+
+									<input type="submit" value="查询余额" onclick="search()">
+								</form>  
+							</div> 
+						</div> 
+
+
+			<!-- ResponsiveTabs js -->
+			<script type="text/javascript">
+				$(document).ready(function () {
+					$('#horizontalTab').easyResponsiveTabs({
+						type: 'default', //Types: default, vertical, accordion           
+						width: 'auto', //auto or any width like 600px
+						fit: true   // 100% fit in a container
+					});
+				});
+
+				function search(){
+					alert("当前账户初始余额为10000元.")
+				}
+			</script>
+			<!-- //ResponsiveTabs js -->
+		</div>	
+	</div>	
+	<!-- //main -->
+	<!-- copyright -->
+	<div class="copyright">
+		<p> © 2018 ATM . All rights reserved | Design by wangjian.com</p>
+	</div>
+	<!-- //copyright --> 
+</body>
+</html>

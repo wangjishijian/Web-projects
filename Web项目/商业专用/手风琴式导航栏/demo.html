@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+	 <head>
+			<meta charset="UTF-8"> <!--声明编码 UTF-8(国际编码)-->
+			<title>网站标题</title>
+			<style type="text/css">
+				/*全局属性*/
+				*{margin:0;/*外边距*/
+					padding:0;/*内边距*/
+					list-style-type:none;/*去除病人痣*/
+					font-family:"Cambria";/*文字类型*/
+					text-transform:uppercase;/*字母大写*/
+				}
+				#box{width:850px;/*宽*/
+					height:480px;/*高*/
+					/*background:#99ffff;背景：颜色*/
+					margin:auto;
+					}
+				#box ul li{width:115px;height:480px;
+							border-right:1px solid #fff;
+							border-bottom:1px solid #fff;
+							float:right;/*右浮动*/
+							box-shadow:1px 3px 15px #000;/* X Y 模糊度 颜色*/
+							color:#444;
+							position:relative;/*相对定位*/
+							}
+				#box ul li:nth-child(1){width:480px;background:url("images/1.jpg")}
+				#box ul li:nth-child(2){background:url("images/2.jpg")}
+				#box ul li:nth-child(3){background:url("images/3.jpg")}
+				#box ul li:nth-child(4){background:url("images/4.jpg")}
+
+				#box ul li .header{background:#fff;/*背景透明*/
+									opacity:.8;
+									text-align:center;/*文本居中*/
+									padding:10px;
+									margin-top:60px;/*上外边距*/
+									font-size:14px;/*文本大小*/
+									font-weight:bold;/*文本加粗*/
+									text-shadow:-1px -1px 1px #ccc;
+									letter-spacing:2px;/*文字间距*/
+									}
+				#box ul li .pic{width:100%;
+								height:340px;
+								background:url("images/bg.png");
+								position:absolute;/*绝对定位*/
+								bottom:0;
+								display:none;/*隐藏*/
+								}
+				#box ul li .con{width:100%;
+								height:175px;
+								position:absolute;
+								bottom:0;
+								display:none;/*隐藏*/
+								}
+				#box ul li .con h2{font-size:45px;
+									font-weight:bold;
+									text-shadow:-1px -1px 1px #444;/*文本阴影*/
+									text-indent:20px;/*文本首行缩进*/
+									}
+				#box ul li .con p{font-size:10px;
+									margin:10px 20px;
+									font-style:italic;/*文字*/
+									letter-spacing:2px;
+									text-transform:none;
+									}
+				#box ul li .con a{color:#888;
+								text-decoration:none;/*清除下划线*/	
+								font-size:11px;
+								position:absolute;
+								left:20px;
+								bottom:10px;
+								}
+				#box ul li .con a:hover{color:#333;
+								text-decoration:underline;/*显示下划线*/	
+								
+								}
+			</style>
+	 </head>
+	 
+	 <body>
+	 <!--DIV盒子-用户名=“张三”-->
+		<div id="box">
+			<ul>
+				<li>
+					<div class="header">div</div>
+					<div class="pic"></div>
+					<div class="con">
+						<h2>div+css</h2>
+						<p>网页制作零基础html+div+css+项目实战</p>
+						<a href="http://url.cn/Qqr3K3" target="_blank">more &rarr;</a>
+					</div>
+				</li>
+				<li>
+					<div class="header">javascript</div>
+					<div class="pic"></div>
+					<div class="con">
+						<h2>div+css</h2>
+						<p>网页制作零基础javascript+jquery+ajax+项目实战</p>
+						<a href="http://url.cn/Qqr3K3" target="_blank">more &rarr;</a>
+					</div>
+				</li>
+				<li>
+					<div class="header">html5</div>
+					<div class="pic"></div>
+					<div class="con">
+						<h2>div+css</h2>
+						<p>网页制作零基础html5+css5+项目实战</p>
+						<a href="http://url.cn/Qqr3K3" target="_blank">more &rarr;</a>
+					</div>
+				</li>
+				<li>
+					<div class="header">cms</div>
+					<div class="pic"></div>
+					<div class="con">
+						<h2>第四季魔鬼训练班</h2>
+						<p>前台开完整开发</p>
+						<a href="http://url.cn/Qqr3K3" target="_blank">more &rarr;</a>
+					</div>
+				</li>
+			</ul>
+		</div>
+
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript">
+			//alert($);
+			$("#box ul li").hover(function(){
+				$(this).stop().animate({width:"480px"},500).siblings().stop().animate({width:"115px"},500);
+				$(this).find(".header").fadeOut();
+				$(this).find(".pic").slideDown(500);
+				$(this).find(".con").fadeIn(500);
+				},function(){
+				$(this).find(".header").fadeIn();
+				$(this).find(".pic").slideUp();
+				$(this).find(".con").slideUp();
+				});
+		</script>
+	 </body>
+</html>

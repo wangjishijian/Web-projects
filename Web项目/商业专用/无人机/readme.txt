@@ -1,0 +1,6 @@
+本网页UI设计含有home主页、Product页、Service页和Maintenance页，添加了动画提供流畅的浏览体验。
+
+采用大量图片图标，添加菜单使逻辑更清晰。
+
+二级页面放在resource文件夹下，在首页可通过点击Product、Service、Maintenance访问,
+在二级页面点击logo会返回首页。

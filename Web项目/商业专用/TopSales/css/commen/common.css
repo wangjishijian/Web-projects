@@ -1,0 +1,364 @@
+/**
+ * 通用
+ */
+.text-c201 {
+  color: #ff9933;
+}
+.text-c202 {
+  color: #ffbb44;
+}
+.text-c203 {
+  color: #ff6633;
+}
+.text-c204 {
+  color: #333333;
+}
+.text-c205 {
+  color: #666666;
+}
+.text-c206 {
+  color: #999999;
+}
+.text-c207 {
+  color: #fbfbfb;
+}
+.text-c208 {
+  color: #ffffff;
+}
+.text-c209 {
+  color: #f0f0f0;
+}
+.text-c210 {
+  color: #00cc33;
+}
+.text-c211 {
+  color: #ffcc33;
+}
+.text-c212 {
+  color: #3366cc;
+}
+.text-c213 {
+  color: #ff3300;
+}
+.text-c214 {
+  color: #cccccc;
+}
+.text-c215 {
+  color: #ffff00;
+}
+.text-c216 {
+  color: #00ddcc;
+}
+.text-c217 {
+  color: #fafdff;
+}
+.text-c218 {
+  color: #17263a;
+}
+.text-c219 {
+  color: #243147;
+}
+.text-c220 {
+  color: #a94442;
+}
+/**统计表的数字**/
+/**百分比的数字**/
+/**导航栏标题，重要内容一级提示**/
+/**二级标题，重要正文文字**/
+/**正文内容辅助文字**/
+/**提示性文字**/
+.text-f12 {
+  font-size: 12px;
+}
+.text-f13 {
+  font-size: 13px;
+}
+.text-f14 {
+  font-size: 14px;
+}
+.text-f15 {
+  font-size: 15px;
+}
+.text-f16 {
+  font-size: 16px;
+}
+.text-f17 {
+  font-size: 17px;
+}
+.text-f18 {
+  font-size: 18px;
+}
+.text-f19 {
+  font-size: 19px;
+}
+.text-f20 {
+  font-size: 20px;
+}
+.text-f21 {
+  font-size: 21px;
+}
+.text-f22 {
+  font-size: 22px;
+}
+.text-f23 {
+  font-size: 23px;
+}
+.text-f24 {
+  font-size: 24px;
+}
+.text-f25 {
+  font-size: 25px;
+}
+.text-f26 {
+  font-size: 26px;
+}
+.text-f27 {
+  font-size: 27px;
+}
+.text-f28 {
+  font-size: 28px;
+}
+.text-f29 {
+  font-size: 29px;
+}
+.text-f30 {
+  font-size: 30px;
+}
+.text-f31 {
+  font-size: 31px;
+}
+.text-f32 {
+  font-size: 32px;
+}
+.text-f33 {
+  font-size: 33px;
+}
+.text-f34 {
+  font-size: 34px;
+}
+.text-align-right {
+  text-align: right !important;
+}
+.text-ellipsis {
+  overflow: hidden;
+  /* 文字溢出隐藏*/
+  text-overflow: ellipsis;
+  /* 文字溢出打点点*/
+  white-space: nowrap;
+}
+.text-line-limit-1 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+.text-line-limit-2 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.clearfix {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  clear: both;
+}
+.margin-10 {
+  margin: 10px;
+}
+.margin-15 {
+  margin: 15px;
+}
+.margin-20 {
+  margin: 20px;
+}
+.margin-lr-10 {
+  margin: 0px 10px;
+}
+.margin-lr-20 {
+  margin: 0px 20px;
+}
+.margin-top-10 {
+  margin: 10px 0px;
+}
+.margin-top-20 {
+  margin: 20px 0px;
+}
+.margin-top-15 {
+  margin-top: 15px;
+}
+.margin-bottom-15 {
+  margin-bottom: 15px;
+}
+.margin-top-25 {
+  margin-top: 25px;
+}
+.margin-bottom-25 {
+  margin-bottom: 25px;
+}
+.padding-10 {
+  padding: 10px;
+}
+.padding-15 {
+  padding: 15px;
+}
+.padding-20 {
+  padding: 20px;
+}
+.padding-30 {
+  padding: 30px;
+}
+.padding-40 {
+  padding: 40px;
+}
+.padding-lr-10 {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.padding-lr-15 {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.padding-lr-20 {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.padding-lr-30 {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+.padding-lr-40 {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+.padding-tb-20 {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+/* table表格操作迎铵钮光标样式 */
+table a {
+  cursor: pointer;
+}
+/* 列表排序 */
+.orderType input {
+  display: none;
+}
+.orderType input ~ i:nth-of-type(1) {
+  display: none;
+}
+.orderType input:checked ~ i:nth-of-type(1) {
+  display: inline;
+}
+.orderType input:checked ~ i:nth-of-type(2) {
+  display: none;
+}
+/*列表多条件筛选*/
+.condition span.active {
+  color: #ff6633;
+}
+.condition .title {
+  float: left;
+  margin-top: 10px;
+}
+.condition .tablist {
+  margin-left: 40px;
+}
+.condition .tablist li a {
+  color: #333333;
+}
+.condition .tablist li.active a {
+  color: #ff6633;
+}
+.condition .noTab ul {
+  border: none;
+}
+.condition .noTab .nav-tabs > li > a {
+  cursor: pointer;
+}
+.condition .noTab .nav-tabs > li.active > a {
+  background-color: #fbfbfb;
+  border: none;
+  cursor: default;
+}
+.width-100 {
+  width: 100%;
+}
+.width-50 {
+  width: 50%;
+}
+.bg-color-white {
+  background-color: #ffffff;
+}
+.bg-color-grey {
+  background-color: #f0f0f0;
+}
+.form-label {
+  color: #333333;
+  font-size: 16px;
+}
+.form-input {
+  color: #333333;
+  font-size: 14px;
+}
+.form-group .text-danger {
+  display: none;
+}
+.form-group.has-error .text-danger {
+  display: block;
+}
+.form .text-danger {
+  display: none;
+}
+.form.has-error .text-danger {
+  display: block;
+}
+a.disabled {
+  color: #999999;
+}
+.display-table {
+  display: table;
+}
+.table-cell {
+  display: table-cell;
+}
+/* 顶部搜索框 */
+.searchDiv {
+  margin: 20px;
+  display: table;
+}
+.searchDiv label,
+.searchDiv button {
+  display: table-cell;
+}
+/* 分页列表 */
+.pageList {
+  background-color: #fbfbfb;
+  margin: 20px 0px;
+  padding: 20px;
+}
+/* Bootstrap 在输入框的任意一侧添加额外元素宽度自适应*/
+.input-group-addon.addon {
+  border: none;
+  background: none;
+  padding: 0px;
+  padding-right: 10px ;
+}
+/*去除input number的上下小箭头*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none !important;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+.onTableData {
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  color: #cccccc;
+  padding: 20px;
+}

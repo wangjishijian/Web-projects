@@ -1,0 +1,156 @@
+/* 周海伦的css */
+.meeting-top-box .meeting-click{
+	background-color: #00C665;
+	color:#fff;
+}
+
+/* 刷新和自定义 */
+
+@font-face { 
+  font-family: Proxima;
+  src: url('ProximaNovaCond-Semibold.otf');
+} 
+
+.form-controll {
+	background-color: #fff;
+	box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.1);
+}
+.form-controll:hover {
+	border: 1px solid #eeeeee;
+	background-color: #fff;
+    -moz-box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.16), 0 0px 0px 0 rgba(0, 0, 0, 0.12);
+    -webkit-box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.16), 0 0px 0px 0 rgba(0, 0, 0, 0.12);
+    /* box-shadow:0 0px 0px 0 rgba(0, 0, 0, 0.16), 0 0px 0px 0 rgba(0, 0, 0, 0.12); */
+    opacity: 1;
+}
+.search-item {
+    margin-bottom: 25px;
+}
+.sr-name {
+    font-size: 16px;
+}
+.sr-name a:visited {
+    color: #34495e;
+}
+.sr-name a {
+    text-decoration: underline;
+}
+a, a:hover, a:active, a:focus {
+    color: #2895FF;
+}
+.text-green {
+    color: #666666;
+}
+.page-title h1 {
+    margin: 0;
+    margin-bottom: 15px;
+    font-size: 26px;
+    float: left;
+}
+.belle-but{
+    height: 46px;
+    padding: 10px 16px;
+    font-size: 18px;
+    line-height: 1.3333333;
+    border-color: #314559;
+    color: #fff;
+    background-color: #34495e;
+}
+.index-menu{
+	margin-left: 15px;
+}
+.noti-dot {
+    position: relative;
+    top: -24px;
+    right: 9px;
+}
+.pulse {
+    width: 2px;
+    height: 2px;
+    border: 3px solid #ff5b5b;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    border-radius: 30px;
+    background-color: #ff5b5b;
+    z-index: 10;
+    position: absolute;
+    right: 3px;
+}
+.subdrop2 i{
+	margin-right: 5px;
+}
+.panel-heading {
+    border-color: #317eeb !important;
+    color: #317eeb !important;
+    background-color: #ffffff;
+    border-top: 3px solid #317eeb !important;
+    border-radius: 3px;
+    padding: 10px 20px 0px;
+}
+
+
+.contrast-li{
+	float:left;
+}
+.contrast-li ul li{
+	list-style:none;
+	text-align:center;
+}
+.contrast-li-one ul li{
+	color:#4197EB;
+}
+.contrast-div{
+	overflow:hidden;
+	margin-left:48px;
+	border-left: 1px solid #D2D2D2;
+}
+
+.contrast-div div ul{
+	list-style: none;
+	margin: 0 ;
+	padding: 0 ;
+}
+
+.contrast-li ul li {
+	margin-left: 0px;
+	padding:10px 0px;
+	border-right: 1px solid #D2D2D2;
+	border-bottom: 1px solid #D2D2D2;
+}
+.contrast-li-tou ul li{
+	width: 230px; 
+	float:left;
+	background-color: #6FB8FF;
+	color:#fff;
+	font-size:16px;
+	height: 50px;
+	line-height:50px;
+	text-align:center;
+}
+.contrast-li-tou ul .contrast-li1{
+	width: 180px; 	
+
+}
+.contrast-li.contrast-li-one ul {
+	width: 180px;
+}
+.contrast-li ul{
+	width: 230px; 
+}
+.contrast-li.contrast-li-one {
+	width: 180px;
+}
+.contrast-li {
+	width: 230px; 
+}
+.contrast-li-tou ul li{
+	border-right: 1px solid #D2D2D2;
+	border-bottom: 1px solid #D2D2D2;
+	border-top: 1px solid #D2D2D2;
+	height: 55px;
+}
+.contrast-li-one ul li{
+	width: 180px;
+	font-weight: 700;
+}
+

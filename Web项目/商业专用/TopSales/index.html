@@ -1,0 +1,150 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link href="css/commen/bootstrap.min.css" rel="stylesheet" type="text/css">
+        <link href="lib/bootstrap-table/css/bootstrap-table.css" rel="stylesheet"><!-- table -->
+        <link href="css/commen/core.css" rel="stylesheet" type="text/css"><!-- 通用 -->
+        <link href="css/commen/icons.css" rel="stylesheet" type="text/css"><!-- 通用 -->
+        <link href="css/commen/components.css" rel="stylesheet" type="text/css"><!-- 通用 -->
+        <link href="css/commen/pages.css" rel="stylesheet" type="text/css"><!-- 通用 -->
+        <link href="css/commen/menu.css" rel="stylesheet" type="text/css"><!-- 通用 -->
+        <link href="css/commen/responsive.css" rel="stylesheet" type="text/css"><!-- 通用 -->
+        <link href="lib/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css" rel="stylesheet"><!-- 通用 -->
+        <link href="lib/angular-ui-select/dist/select.min.css" rel="stylesheet"><!-- 通用 -->
+        <link href="css/commen/public.css" rel="stylesheet" ><!-- 通用 -->
+        <link href="lib/citys/city.css" rel="stylesheet"><!-- 省 -->
+        <link href="lib/sweetalert/dist/sweetalert.css" rel="stylesheet"><!-- 提示框 -->
+        <link href="css/commen/sixes.css" rel="stylesheet" type="text/css"><!-- 通用 -->
+        <link href="css/business/shireen.css" rel="stylesheet" type="text/css"><!-- 张璇个人css -->
+        <link href="css/business/belle.css" rel="stylesheet" type="text/css"><!-- 周海伦个人css -->
+        <link href="images/newlog.ico" rel="shortcut icon"><!-- 图标 -->
+        <title>首页</title>
+    </head>
+    <body class="fixed-left" ng-controller="homeCtrl">
+        <div id="wrapper">
+            <div class="topbar">
+                <!-- LOGO -->
+                <div class="topbar-left" style="width:250px;">
+                    <div class="text-center">
+                        <a ui-sref="fullContainer" class="logo jl_logo-icon"><i class="md md-terrain"></i><span>Top<span>Sales</span></span></a>
+                    </div>
+                </div>
+                <div class="navbar navbar-default" role="navigation">
+                    <div class="container">
+                        <div class="row">
+                        	<div class="pull-left">
+                                <button class="button-menu-mobile open-left">
+                                    <i><img src="images/sidepull.png"/></i>
+                                </button>
+                                <span class="clearfix"></span>
+                            </div>
+                            	<h4 class="page-title" style='float:left;'>All for one, one for all.</h4>
+								<div class="pull-right" style="margin-top: 50px;margin-right:10px; ">
+									<div style="position: relative;margin-left: 30px;" class="search">
+									<!-- <input type="text" placeholder="Search..." class=" top-input"/> -->
+									<!-- <a class="sousuo" style="height:26px;width:26px;"></a> -->
+								</div>
+								<!-- <div ui-sref="myMessage" class="bell" style="position:relative;diaplay:inline-block; height:30px;width:30px;float:left;margin-top: -27px;cursor: pointer;">
+									<img src="images/bel.png" height="26" class="bell" >
+									<div class="noti-dot"><span class="pulse"></span></div>	
+									<img src="images/new1.gif" height="13" style="position:absolute; top:-9px;left:8px;" class="icon-new">
+								</div> -->
+							</div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+             
+            <div class="left side-menu" >
+                <div class="sidebar-inner slimscrollleft" >
+	                 <div class="user-box">
+			             <div class="picture">
+			                 <img ng-src="{{headPic}}" src="" onerror="this.src='images/user.jpg'" class="img-circle img-thumbnail img-responsive">
+			             </div>
+			             <h5><a ng-bind="companyName=='null'?'':companyName"></a></h5>
+			             <div>
+			             <a ui-sref="profile"><i class="glyphicon glyphicon-cog"></i></a>&nbsp;&nbsp;
+			             <a><i ng-click="loginOut()" class="glyphicon glyphicon-off"></i></a>
+			             </div>
+			             <div class="job">我的工作台</div>
+	                 </div>
+                    <div id="sidebar-menu" class="hidden" >   
+                        <ul class="list">
+                            <li class="has_sub" ng-if="permissionFun('FMS-01');">
+                                <a class="subdrop2"><i><img src="images/shangwuziyuan.png"></i><span class="index-menu">功能</span><span class="pull-right"><i class="fa fa-angle-right" style="margin-top: 3px;"></i></span></a>
+                                <ul class="list-unstyled">
+                                    <li ng-if="permissionFun('FMS-01');"><a ui-sref="a">店铺商品</a></li>
+                                    <li ng-if="permissionFun('FMS-01');"><a ui-sref="a">包邮专区</a></li>
+                                    <li ng-if="permissionFun('FMS-01');"><a ui-sref="a">我的订单</a></li>
+                                </ul>
+                            </li>
+                            <li class="has_sub" ng-if="permissionFun('FMS-01');">
+                                <a class="subdrop2"><i><img src="images/shangwuziyuan.png"></i><span class="index-menu">消息管理</span><span class="pull-right"><i class="fa fa-angle-right" style="margin-top: 3px;"></i></span></a>
+                                <ul class="list-unstyled">
+                                    <li ng-if="permissionFun('FMS-01');"><a ui-sref="a">时间推送</a></li>
+                                    <li ng-if="permissionFun('FMS-01');"><a ui-sref="a">消息回复</a></li>
+                                    <li ng-if="permissionFun('FMS-01');"><a ui-sref="a">普通消息</a></li>
+                                </ul>
+                            </li>
+                            <li class="has_sub" ng-if="permissionFun('FMS-01');">
+                                <a class="subdrop2"><i><img src="images/shangwuziyuan.png"></i><span class="index-menu">服务</span><span class="pull-right"><i class="fa fa-angle-right" style="margin-top: 3px;"></i></span></a>
+                                <ul class="list-unstyled">
+                                    <li ng-if="permissionFun('FMS-01');"><a ui-sref="a">店铺商品</a></li>
+                                    <li ng-if="permissionFun('FMS-01');"><a ui-sref="a">包邮专区</a></li>
+                                    <li ng-if="permissionFun('FMS-01');"><a ui-sref="a">我的订单</a></li>
+                                </ul>
+                            </li>
+                            <li class="has_sub" ng-if="permissionFun('FMS-01');">
+                                <a class="subdrop2"><i><img src="images/shangwuziyuan.png"></i><span class="index-menu">统计</span><span class="pull-right"><i class="fa fa-angle-right" style="margin-top: 3px;"></i></span></a>
+                                <ul class="list-unstyled">
+                                    <li ng-if="permissionFun('FMS-01');"><a ui-sref="a">店铺商品</a></li>
+                                    <li ng-if="permissionFun('FMS-01');"><a ui-sref="a">包邮专区</a></li>
+                                    <li ng-if="permissionFun('FMS-01');"><a ui-sref="a">我的订单</a></li>
+                                </ul>
+                            </li>
+                            <li class="has_sub" ng-if="permissionFun('FMS-01');">
+                                <a class="subdrop2"><i><img src="images/shangwuziyuan.png"></i><span class="index-menu">设置</span><span class="pull-right"><i class="fa fa-angle-right" style="margin-top: 3px;"></i></span></a>
+                                <ul class="list-unstyled">
+                                    <li ng-if="permissionFun('FMS-01');"><a ui-sref="user">用户管理</a></li>
+                                    <li ng-if="permissionFun('FMS-01');"><a ui-sref="a">公众号助手</a></li>
+                                    <li ng-if="permissionFun('FMS-01');"><a ui-sref="a">安全中心</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+            <div class="content-page">
+                <div class="content">
+                    <div class="container" ui-view>
+                    </div>
+           		</div>
+        	</div>
+        <!-- jQuery -->
+        <script src="lib/jquery/jquery.min.js"></script>
+        <script src="lib/jquery/jquery-ui.min.js"></script>
+        <script src="lib/jquery/jquery.slimscroll.js"></script><!-- 滚动条 -->
+        <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+        <script src="lib/bootstrap-table/js/bootstrap-table.js"></script>
+        <script src="lib/bootstrap-table/js/bootstrap-table-zh-CN.js"></script>
+        <script src="lib/bootstrap-datepicker/js/bootstrap-datepicker.js"></script><!-- 日期 -->
+        <script src="lib/bootstrap-datepicker/js/bootstrap-datetimepicker.zh-CN.js"></script><!-- 日期 -->
+        <script src="lib/summernote/summernote.min.js"></script>
+        <script src="lib/summernote/summernote-zh-CN.js"></script>
+        <script src="lib/layer/layer.js"></script>   <!--layer提示框-->
+        <script src="lib/sweetalert/dist/sweetalert.min.js"></script>   <!--提示框警告框-->
+        <script src="lib/sweetalert/sweet.js"></script>   <!--提示框警告框-->
+        <script src="js/common/storage.com.js"></script> <!--本地缓存对象-->
+        <script src="js/judgeVersion.js"></script><!-- 判断浏览器版本 -->
+        <script src="js/common.js"></script><!-- 通用方法 -->
+        
+        <script src="lib/charts/jquery.sparkline.min.js"></script><!-- 统计 -->
+        
+        <!-- 使用require加载js -->
+        <script data-main="js/main.js" src="lib/requirejs/require.js" defer async="true"></script>
+    </body>
+</html>

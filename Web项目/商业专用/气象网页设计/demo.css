@@ -1,0 +1,1288 @@
+@charset "UTF-8";
+
+
+/**
+ * 
+ * @authors Your Name (you@example.org)
+ * @date    2018-04-13 14:05:00
+ * @version $Id$
+ */
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: SimHei;
+    text-decoration: none;
+    list-style: none;
+}
+
+.removeFloat::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+
+
+/* DOM */
+
+.show {
+    display: block!important;
+}
+
+.scrollback {
+	display: none;
+	background: url('img/scrollback.jpg') no-repeat;
+	-webkit-background-size: 100% 100%;
+	background-size: 100% 100%;
+	width: 50px;
+	height: 50px;
+	background-color: #000;
+	opacity: 0.9;
+	border-radius: 50%;
+	position: fixed;
+	right: 60px;
+	bottom: 40px;
+}
+
+
+/* 加载界面 */
+
+.loading {
+    /* 调试 */
+    /* display: none; */
+    box-sizing: border-box;
+    border: 0px solid #000;
+    border-color: #f9a929 #ececeb #07617d #2e383f;
+    width: 100%;
+    height: 949px;
+    background: linear-gradient(45deg, #2E383F, #005792, #222831);
+    background-position: 100% 0;
+    -webkit-background-size: 400%;
+    background-size: 400%;
+    z-index: 999;
+    position: relative;
+    animation: loading 5s;
+    -webkit-animation: loading 5s;
+    animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+}
+
+@keyframes loading {
+    0% {
+        background-position: 0 100%;
+    }
+    50% {
+        background-position: 100% 0;
+    }
+    100% {
+        background-position: 0 100%;
+    }
+}
+
+@-webkit-keyframes loading {
+    0% {
+        background-position: 0 100%;
+    }
+    50% {
+        background-position: 100% 0;
+    }
+    100% {
+        background-position: 0 100%;
+    }
+}
+
+.loading .logo {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -50px;
+    margin-top: -50px;
+    height: 100px;
+    width: 100px;
+    border-radius: 10px;
+    border: 0px solid #000;
+    background: url('img/logo.png');
+    background-size: cover;
+    -webkit-background-size: cover;
+    transform: rotate3d(1, 1, 1, 360deg);
+    -webkit-transform: rotate3d(1, 1, 1, 360deg);
+    animation: logo 3s;
+    -webkit-animation: logo 3s;
+}
+
+
+@keyframes logo {
+    0% {
+        height: 0px;
+        width: 0px;
+        border: 50px solid #000;
+        border-color: transparent;
+        border-radius: 0;
+    }
+
+    20% {
+        height: 0px;
+        width: 0px;
+        border: 50px solid #000;
+        border-color: #ececeb transparent transparent transparent;
+    }
+    40% {
+        border: 50px solid #000;
+        border-color: #ececeb #f9a929 transparent transparent;
+    }
+    60% {
+        border: 50px solid #000;
+        border-color: #ececeb #f9a929 #07617d transparent;
+        -webkit-transform: rotate3d(0, 0, 0, 180deg);
+        transform: rotate3d(0, 0, 0, 360deg);
+    }
+    80% {
+        height: 0;
+        width: 0;
+        border: 50px solid #000;
+        -webkit-transform: rotate3d(1, 1, 1, 360deg);
+        border-color: #363636 #dc2f2f #ff894c #f8f8f8;
+        border-radius: 0;
+        transform: rotate3d(1, 1, 1, 360deg);
+    }
+    100% {
+        height: 100px;
+        width: 100px;
+        border: 0px solid #000;
+        border-color: #ececeb #f9a929 #07617d #2e383f;
+    }
+}
+
+@-webkit-keyframes logo {
+    0% {
+        height: 0;
+        width: 0;
+        border: 50px solid #000;
+        border-color: transparent;
+        border-radius: 0;
+    }
+
+    20% {
+        border: 50px solid #000;
+        border-color: #ececeb transparent transparent transparent;
+    }
+    40% {
+        border: 50px solid #000;
+        border-color: #ececeb #f9a929 transparent transparent;
+    }
+    60% {
+        border: 50px solid #000;
+        border-color: #ececeb #f9a929 #07617d transparent;
+        transform: rotate3d(0, 0, 0, 180deg);
+        -webkit-transform: rotate3d(0, 0, 0, 180deg);
+    }
+    80% {
+        height: 0;
+        width: 0;
+        border: 50px solid #000;
+        transform: rotate3d(1, 1, 1, 360deg);
+        -webkit-transform: rotate3d(1, 1, 1, 360deg);
+        border-color: #363636 #dc2f2f #ff894c #f8f8f8;
+        border-radius: 0;
+    }
+    100% {
+        height: 100px;
+        width: 100px;
+        border: 0px solid #000;
+        border-color: #ececeb #f9a929 #07617d #2e383f;
+    }
+}
+
+.welcome {
+    position: absolute;
+    font-size: 30px;
+    color: #ececeb;
+    left: 60%;
+    top: 47%;
+    transition: all 0.8s;
+    -webkit-transition: all 0.8s;
+    cursor: pointer;
+    animation: welcome 5s;
+    -webkit-animation: welcome 5s;
+}
+
+.welcome em {
+    font-size: 20px;
+}
+
+@keyframes welcome {
+    0% {
+        color: transparent;
+    }
+    25% {
+        color: transparent;
+    }
+    100% {
+        color: #ececeb;
+    }
+}
+
+@-webkit-keyframes welcome {
+    0% {
+        color: transparent;
+    }
+    25% {
+        color: transparent;
+    }
+    100% {
+        color: #ececeb;
+    }
+}
+
+.welcome:hover {
+    font-size: 40px;
+    color: #F9A828;
+}
+
+
+
+
+/* 主界面 */
+
+.main {
+    width: 100%;
+    border: 0px solid transparent;
+    border-color: #f9a929 #ececeb #07617d #2e383f;
+    position: absolute;
+    top: 0;
+    z-index: 3;
+    box-sizing: border-box;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+}
+
+.main .header {
+    height: 100px;
+    background-color: #FCFCFC;
+    position: relative;
+    overflow: hidden;
+}
+
+.main .header .logoAndTitle {
+    height: 80px;
+    margin: 10px 10%;
+    width: 40%;
+    overflow: hidden;
+}
+
+.main .header a.mainLogo {
+    display: inline-block;
+    float: left;
+    width: 80px;
+    height: 80px;
+    text-indent: 1000px;
+    overflow: hidden;
+    white-space: nowrap;
+    background: url('img/logo1.png');
+    -webkit-background-size: 100% 100%;
+    background-size: 100% 100%;
+    border-radius: 3px;
+}
+
+.main .header ul {
+    float: left;
+    margin-left: 10px;
+    padding-top: 20px;
+    font-weight: bolder;
+    width: 60%;
+    white-space: nowrap;
+}
+
+.main .header ul .titleC {
+    font-size: 2em;
+    letter-spacing: 5px;
+}
+
+.main .header ul .titleE {
+    word-spacing: 10px;
+}
+
+.main .header .phoneAndWechat {
+    position: absolute;
+    right: 10%;
+    top: 10%;
+}
+
+.main .header .phone {
+    position: relative;
+}
+
+.main .header .phoneAndWechat img {
+    width: 48px;
+    float: left;
+    font-weight: bolder;
+}
+
+.main .header div.number {
+    float: left;
+}
+
+.main .header .wechat .mes {
+    padding-left: 4px;
+    float: left;
+    padding-top: 14px;
+    font-weight: bolder;
+}
+
+.main .nav {
+    height: 60px;
+    background-color: #EEEEEE;
+    box-shadow: 0px 14px 19px #7A9EB1;
+    margin-bottom: 10px;
+}
+
+.main .nav .navBtn {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
+/* .main .nav .navBtn li.btn1{
+	background: #FF6D24;	
+}
+.main .nav .navBtn li.btn2{
+	background: #005792;
+}
+.main .nav .navBtn li.btn3{
+	background: #307672;
+}
+.main .nav .navBtn li.btn4{
+	background: #FFE1B6;
+}
+.main .nav .navBtn li.btn5{
+	background: #7CBD1E;
+}
+.main .nav .navBtn li.btn6{
+	background: #BDE4F4;
+}
+ */
+.main .nav .navBtn li {
+    background-color: #1E4A87;
+    color: #fff;
+	font-weight: bold;
+    line-height: 60px;
+    height: 60px;
+    box-sizing: border-box;
+    cursor: pointer;
+    width: 13%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-align: center;
+    transition: all 0.3s;
+    border-right: 2px solid #000;
+}
+
+.main .nav .navBtn li:hover {
+	border-top: 5px solid #FDA403;
+    background-color: #F7F7F7;
+    font-weight: bold;
+    box-shadow: 3px 3px 3px #606470;
+    color: #00BBF0;
+}
+
+
+.main .contentWra {
+    position: relative;
+    width: 100%;
+    background:#7A9EB1
+}
+
+
+.main .contentWra>div {
+    display: none;
+    width: 100%;
+    /* padding-bottom: 3em; */
+}
+
+.content1 {
+    padding-bottom: 30px;
+}
+
+.main .content1 .view {
+    margin-top: 0;
+    width: 100%;
+}
+
+.main .content1 .view li {
+    background: url('img/content1/mainpage.png') no-repeat;
+    background-size: cover;
+    background-position: 0 50%;
+    width: 100%;
+    height: 600px;
+}
+
+.main .content1 .exhibitions {
+    width: 100%;
+}
+
+.main .content1 .exhibitions .describe {
+    word-spacing: 1em;
+    width: 35%;
+    letter-spacing: 5px;
+    margin: 0 auto;
+    text-align: center;
+    white-space: nowrap;
+    height: auto;
+    max-height: 200px;
+}
+
+.main .content1 .exhibitions .describeE {
+    color: #1C14C6;
+}
+
+.main .content1 .exhibitions .describeM {
+    text-align: left;
+    margin: 0 auto;
+    white-space: normal;
+    width: 90%;
+    height: auto;
+    max-height: 4em;
+    overflow: hidden;
+    -ms-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+}
+
+.main .content1 .exhibitions .describe .exLink a {
+    display: inline-block;
+    height: 20px;
+    border: 1px solid #000;
+    padding: 5px 10px;
+    margin: 20px 50px;
+    font-weight: bolder;
+    border-radius: 2px;
+    color: #4146d7;
+}
+
+.main .content1 .exhibitions .describe .exLink .exLink2 {
+    background-color: #1a1744;
+    color: #fff;
+}
+
+.main .content1 .exhibitions .icons {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    height: auto;
+    max-height: 120px;
+    border-top: 5px solid black;
+    padding-top: 30px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.main .content1 .exhibitions .icons img {
+    border-radius: 20px;
+    width: 70px;
+}
+
+.main .content1 .exhibitions .icons .iconDes {
+    color: #000;
+    background-color: #a8e0ed;
+    font-weight: bolder;
+    text-align: center;
+    letter-spacing: 8px;
+    padding: 0 5px;
+    border-radius: 3px;
+}
+
+.content2 {
+    position: relative;
+}
+
+.content2 .c2Header {
+    display: flex;
+    height: 60px;
+    width: 80%;
+    min-width: 900px;
+    margin: 1% auto;
+    line-height: 60px;
+    letter-spacing: 10px;
+}
+
+.content2 .c2Header .c2hTitle {
+    font-size: 40px;
+    min-width: 100px;
+    font-weight: bolder;
+}
+
+.content2 .c2Header .c2hSeparator {
+    font-size: 25px;
+}
+
+.content2 .c2Header .c2hMes {
+    font-size: 14px;
+    min-width: 200px;
+    font-weight: normal;
+}
+
+.content2 .c2Header .locationBox {
+    border: 1px solid black;
+    width: 700px;
+    height: 60px;
+    margin-left: 20px;
+    line-height: 60px;
+    background-color: #e2e1e7;
+    position: relative;
+}
+
+.content2 .c2Header .locationBox::before {
+    content: '定位';
+    display: inline-block;
+    padding-left: 48px;
+    background: url('img/content2/location.jpg') no-repeat;
+    -webkit-background-size: 38% 70%;
+    background-size: 38% 70%;
+    background-position: 7px 6px;
+    width: 60px;
+    position: absolute;
+    left: 0;
+    height: 60px;
+}
+
+.content2 .c2Header .locationBox::after {
+    content: '';
+    display: inline-block;
+    background: url('img/content2/search.jpg') no-repeat;
+    -webkit-background-size: 70% 70%;
+    background-size: 70% 70%;
+    background-position: 6px 9px;
+    width: 60px;
+    position: absolute;
+    right: 10px;
+    height: 60px;
+}
+
+
+.content2 .c2Header .locationBox input {
+    height: 60px;
+    display: block;
+    top: 0;
+    left: 100px;
+    position: absolute;
+    border-width: 0;
+    width: 500px;
+    font-size: 20px;
+}
+
+.content2 .c2Dec {
+    position: absolute;
+    right: 30px;
+    top: 30px;
+}
+
+.content2 .c2Dec img {
+    width: 250px;
+    position: relative;
+}
+
+
+.content2 .news {
+    margin-left: 11%;
+    margin-right: 20%;
+    min-width: 800px;
+}
+
+.content2 .news .newsDec {
+    font-weight: bold;
+    font-size: 26px;
+    position: absolute;
+    letter-spacing: 5px;
+    word-spacing: 10px;
+    transform: rotate(90deg);
+    transform-origin: 0% 0%;
+    left: 10%;
+    top: 77px;
+}
+
+.content2 .news .newsMes {
+    height: 200px;
+    background: #DBEDF3;
+    border-left: 10px solid #2ee2cf;
+    margin-bottom: 20px;
+    padding: 0 5px;
+    overflow: hidden;
+    -ms-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+}
+
+.content2 .more2 {
+    margin-left: 11%;
+}
+
+.content2 .more2 li {
+    margin-right: 20px;
+    border: 1px solid #716c86;
+    font-size: 20px;
+    color: #000;
+    font-weight: bold;
+    padding: 5px 30px;
+    display: inline-block;
+    cursor: pointer;
+    box-shadow: 2px 2px 2px #000;
+}
+
+.content2 .more2 li:hover {
+    background-color: #1a1744;
+    color: #fff;
+}
+
+.content2 .return {
+    background: url('img/return.png') no-repeat;
+    -webkit-background-size: 100% 100%;
+    background-size: 100% 100%;
+    margin-left: 5%;
+    width: 122px;
+    height: 58px;
+    cursor: pointer;
+}
+
+.content3 .c3Header {
+    width: 80%;
+    height: 80px;
+    min-width: 1390px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.content3 .c3Header .classify {
+    border: 1px solid black;
+    width: 700px;
+    height: 60px;
+    line-height: 80px;
+    background-color: #e2e1e7;
+    position: relative;
+    margin-top: 10px;
+    border-radius: 10px;
+}
+
+.content3 .c3Header .classify::before {
+    content: '定位';
+    display: inline-block;
+    padding-left: 48px;
+    background: url('img/content3/classify.jpg') no-repeat;
+    -webkit-background-size: 38% 70%;
+    background-size: 38% 70%;
+    background-position: 7px 6px;
+    width: 60px;
+    position: absolute;
+    left: 0;
+    height: 60px;
+    line-height: 60px;
+}
+
+.content3 .c3Header .classify::after {
+    content: '';
+    display: inline-block;
+    background: url('img/content2/search.jpg') no-repeat;
+    -webkit-background-size: 70% 70%;
+    background-size: 70% 70%;
+    background-position: 6px 9px;
+    width: 60px;
+    position: absolute;
+    right: 10px;
+    height: 60px;
+}
+
+
+.content3 .c3Header .classify input {
+    height: 60px;
+    display: block;
+    top: 0;
+    left: 100px;
+    position: absolute;
+    border-width: 0;
+    width: 500px;
+    font-size: 20px;
+}
+
+.content3 .c3Header .c3hDec {
+    letter-spacing: 3px;
+    margin-top: 7px;
+}
+
+.content3 .c3Content .viewPlace {
+    width: 80%;
+    height: 300px;
+    margin: 10px auto;
+    border: 1px solid #55e5d8;
+    display: flex;
+    min-width: 1100px;
+}
+
+.content3 .c3Content .viewPlace .viewPicture img {
+    height: 300px;
+}
+
+.content3 .c3Content .viewPlace .viewDes {
+    padding: 10px;
+    letter-spacing: 3px;
+}
+
+.c3Content .viewPlace .viewDes .vdTime {
+    color: #bdbdbd;
+}
+
+.c3Content .viewPlace .viewDes .vdSection {
+    letter-spacing: 1px;
+    height: 100px;
+    text-overflow: ellipsis;
+}
+
+.c3Content .viewPlace .viewDes .c3vBtn a {
+    display: inline-block;
+    height: 30px;
+    line-height: 30px;
+    font-size: 20px;
+    color: #000;
+    font-weight: bold;
+    padding: 15px 10px;
+    border: 1px solid #000;
+    margin: 20px 20px 10px 0;
+}
+
+.c3Content .viewPlace .viewDes .c3vBtn a:hover {
+    color: #fff;
+    background-color: #1a1744;
+}
+
+.c3Content .viewPlace .viewDes .c3Choice {
+    display: flex;
+}
+
+.c3Content .viewPlace .viewDes .c3Choice>div {
+    margin-right: 20px;
+}
+
+.c3Content .viewPlace .viewDes .c3Choice img {
+    height: 28px;
+}
+
+.c3FooterWra {
+    background-color: #bff6f1;
+    height: 80px;
+}
+
+.c3FooterWra .c3Footer {
+    margin: 0 auto;
+    width: 80%;
+    height: 80px;
+    line-height: 80px;
+    margin-bottom: -34px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.c3FooterWra .c3Footer .myAccount a {
+    display: inline-block;
+    height: 80px;
+    text-indent: 80px;
+    background: url('img/content3/account.jpg') no-repeat;
+    -webkit-background-size: 80px 80px;
+    background-size: 80px 80px;
+    font-weight: bold;
+    color: #000;
+}
+
+.c3FooterWra .c3Footer .c3return a {
+    display: inline-block;
+    width: 100px;
+    height: 80px;
+    background: url('img/content3/c3return.jpg') no-repeat;
+    -webkit-background-size: 95px 80px;
+    background-size: 95px 80px;
+}
+
+
+.content4 .c4Header {
+    min-width: 1268px;
+    display: flex;
+    width: 80%;
+    margin: 0 auto;
+    justify-content: space-between;
+    height: 80px;
+    line-height: 80px;
+}
+
+.content4 .c4Header .c4Title1 {
+    font-size: 30px;
+    letter-spacing: 5px;
+}
+
+
+.content4 .c4Header .c4Title2 {
+    font-size: 30px;
+    color: #8EEEE2;
+    letter-spacing: 3px;
+}
+
+.content4 .c4Header .c4Search {
+    border: 1px solid black;
+    width: 700px;
+    height: 60px;
+    line-height: 80px;
+    background-color: #e2e1e7;
+    position: relative;
+    margin-top: 10px;
+    border-radius: 10px;
+}
+
+.content4 .c4Header .c4Search::before {
+    content: '定位';
+    display: inline-block;
+    padding-left: 48px;
+    background: url('img/content3/classify.jpg') no-repeat;
+    -webkit-background-size: 38% 70%;
+    background-size: 38% 70%;
+    background-position: 7px 6px;
+    width: 60px;
+    position: absolute;
+    left: 0;
+    height: 60px;
+    line-height: 60px;
+}
+
+.content4 .c4Header .c4Search::after {
+    content: '';
+    display: inline-block;
+    background: url('img/content2/search.jpg') no-repeat;
+    -webkit-background-size: 70% 70%;
+    background-size: 70% 70%;
+    background-position: 6px 9px;
+    width: 60px;
+    position: absolute;
+    right: 10px;
+    height: 60px;
+}
+
+
+.content4 .c4Header .c4Search input {
+    height: 60px;
+    display: block;
+    top: 0;
+    left: 100px;
+    position: absolute;
+    border-width: 0;
+    width: 500px;
+    font-size: 20px;
+}
+
+.content4 .c4View {
+    width: 80%;
+    height: 800px;
+    margin: 40px auto;
+    min-width: 900px;
+}
+
+.content4 .c4View .c4vShow {
+    display: flex;
+    height: 400px;
+}
+
+.content4 .c4View .c4vShow .c4vs1 {
+    width: 60%;
+    border: 1px solid black;
+    padding: 5px;
+}
+
+.content4 .c4View .c4vShow img {
+    width: 100%;
+    height: 100%;
+}
+
+.content4 .c4View .c4vShow .c4vs2 {
+    width: 40%;
+    border: 1px solid black;
+    padding: 5px;
+}
+
+.content4 .c4View .c4vLocation {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 10px;
+    margin-right: 10px;
+    height: 400px;
+    margin-top: 20px;
+}
+
+.content4 .c4View .c4vLocation>div {
+    height: 400px;
+    position: relative;
+    width: 22%;
+    outline: 1px solid #000;
+    outline-offset: 10px;
+    border: 1px solid black;
+}
+
+.content4 .c4View .c4vLocation img {
+    width: 100%;
+    height: 370px;
+}
+
+.c4View .c4vLocation .LocName {
+    position: absolute;
+    height: 30px;
+    line-height: 30px;
+    bottom: 0;
+}
+
+.c4View .c4vLocation .LocName a {
+    display: inline-block;
+    text-indent: 30px;
+    height: 30px;
+    background: url('img/content4/link.jpg') no-repeat;
+    -webkit-background-size: 30px 30px;
+    background-size: 30px 30px;
+}
+
+.content5 {
+    background: #ececec;
+    height: 1000px;
+}
+
+.content5 .c5Header {
+    height: 60px;
+    line-height: 60px;
+    letter-spacing: 5px;
+    display: flex;
+    justify-content: center;
+}
+
+.content5 .c5Header .c5hTitle {
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.content5 .c5Header .separator {
+    font-size: 30px;
+    margin-left: 10px;
+}
+
+.content5 .c5Header .c5hDec {
+    margin-top: 3px;
+    font-size: 14px;
+    margin-left: 10px;
+}
+
+.c5FooterWra {
+    height: 80px;
+}
+
+.c5FooterWra .c5Footer {
+    margin: 0 auto;
+    width: 95%;
+    height: 80px;
+    line-height: 80px;
+    margin-bottom: -34px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.c5FooterWra .c5Footer .c5myAccount a {
+    display: inline-block;
+    height: 80px;
+    text-indent: 80px;
+    background: url('img/content5/account.jpg') no-repeat;
+    -webkit-background-size: 80px 80px;
+    background-size: 80px 80px;
+    font-weight: bold;
+    color: #000;
+}
+
+.c5FooterWra .c5Footer .c5return a {
+    display: inline-block;
+    width: 100px;
+    height: 80px;
+    background: url('img/content5/c3return.jpg') no-repeat;
+    -webkit-background-size: 95px 80px;
+    background-size: 95px 80px;
+}
+
+.content5 .c5Logo {
+    margin: 50px auto;
+    min-width: 60px;
+    width: 60px;
+    background: url('img/logo1.png') no-repeat;
+    -webkit-background-size: 60px 60px;
+    background-size: 60px 60px;
+    height: 100px;
+}
+
+.content5 .c5locationBox {
+    border: 1px solid black;
+    width: 700px;
+    height: 60px;
+    line-height: 60px;
+    margin: 0 auto;
+    background-color: #e2e1e7;
+    position: relative;
+}
+
+.content5 .c5locationBox::before {
+    content: '';
+    display: inline-block;
+    padding-left: 48px;
+    background: url('img/content2/location.jpg') no-repeat;
+    -webkit-background-size: 38% 70%;
+    background-size: 38% 70%;
+    background-position: 7px 6px;
+    width: 60px;
+    position: absolute;
+    left: 0;
+    height: 60px;
+}
+
+.content5 .c5locationBox::after {
+    content: '';
+    display: inline-block;
+    background: url('img/content2/search.jpg') no-repeat;
+    -webkit-background-size: 70% 70%;
+    background-size: 70% 70%;
+    background-position: 6px 9px;
+    width: 60px;
+    position: absolute;
+    right: 10px;
+    height: 60px;
+}
+
+
+.content5 .c5locationBox input {
+    height: 60px;
+    display: block;
+    top: 0;
+    left: 100px;
+    position: absolute;
+    border-width: 0;
+    width: 500px;
+    font-size: 20px;
+}
+
+.content5 .c5View {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: 100px auto;
+}
+
+.content5 .c5View img {
+    min-width: 100px;
+}
+
+.content6 {
+    padding-bottom: 30px;
+}
+
+.c6FooterWra {
+    background-color: #bff6f1;
+    height: 80px;
+}
+
+.c6FooterWra .c6Footer {
+    margin: 0 auto;
+    width: 80%;
+    height: 80px;
+    line-height: 80px;
+    margin-bottom: -34px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.c6FooterWra .c6Footer .myAccount a {
+    display: inline-block;
+    height: 80px;
+    text-indent: 80px;
+    background: url('img/content3/account.jpg') no-repeat;
+    -webkit-background-size: 80px 80px;
+    background-size: 80px 80px;
+    font-weight: bold;
+    color: #000;
+}
+
+.c6FooterWra .c6Footer .c6return a {
+    display: inline-block;
+    width: 100px;
+    height: 80px;
+    background: url('img/content3/c3return.jpg') no-repeat;
+    -webkit-background-size: 95px 80px;
+    background-size: 95px 80px;
+}
+
+.c6Content {
+    width: 80%;
+    margin: 30px auto;
+    display: flex;
+    height: 700px;
+}
+
+.c6Content .c6cMain {
+    width: 40%;
+    min-width: 400px;
+    height: 610px;
+}
+
+.c6Content .c6cMain .loginTip {
+    display: flex;
+    height: 30px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    vertical-align: bottom;
+}
+
+.c6Content .c6cMain .loginTip .tip1 {
+    font-size: 25px;
+    line-height: 25px;
+    letter-spacing: 3px;
+    font-weight: bolder;
+}
+
+.c6Content .c6cMain .loginTip .tip2 {
+    text-indent: 30px;
+    letter-spacing: 3px;
+}
+
+.c6Content .c6cMain .loginTip .tip2 a {
+    color: red;
+    font-size: 20px;
+}
+
+.c6Content .c6cMain form {
+    padding: 10px;
+    width: 300px;
+    display: flex;
+}
+
+.c6Content .c6cMain form li {
+    line-height: 30px;
+    letter-spacing: 5px;
+}
+
+
+.c6Content .c6cMain .login {
+    color: #fff;
+    width: 200px;
+    font-size: 40px;
+    height: 60px;
+    line-height: 60px;
+    background-color: #393E46;
+    text-align: center;
+    margin-left: 60px;
+    margin-top: 20px;
+}
+
+.c6Content .c6cMain .login:hover {
+
+}
+
+.c6Content .c6cMain .loginMore {
+    margin-top: 200px;
+    font-size: 25px;
+    font-weight: bold;
+    letter-spacing: 5px;
+}
+
+
+.c6Content .c6cMain .loginMore img {
+    width: 80px;
+    margin-right: 10px;
+    margin-top: 20px;
+}
+
+.c6Content .c6cOther {
+    width: 60%;
+    position: relative;
+    height: 510px;
+}
+
+.c6Content .c6cOther .friendAd {
+    height: 100px;
+}
+
+.c6Content .c6cOther .friendAd a {
+    background: url('img/content6/ico.jpg') no-repeat;
+    display: inline-block;
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top: -27px;
+}
+
+.c6Content .c6cOther .friendAd .scan {
+    right: 0;
+    background-position: 57% 62%;
+}
+
+
+.c6Content .c6cOther .friendAd .weibo {
+    right: 120px;
+    background-position: 74% 62%;
+}
+
+.c6Content .c6cOther .c6View {
+    height: 510px;
+    padding: 10px;
+    width: 100%;
+    background: url('img/content6/云之彼端，.jpg') no-repeat;
+    -webkit-background-size: cover;
+    background-size: 100% 100%;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.footer {
+    color: #C1C1C1;
+    background-color: #292725;
+    /* height: 40px; */
+    line-height: 40px;
+    text-align: center;
+
+}
+
+.userHelp {
+    position: fixed;
+    right: 100px;
+    top: 100px;
+}
+
+.userHelp li.uHdes {
+    font-size: 35px;
+    border: 25px solid #000;
+    border-color: #363636 #dc2f2f #ff894c #f8f8f8;
+    font-size: 15px;
+    width: 0px;
+    height: 0px;
+    border-radius: 5px;
+    transition: all 0.5s;
+}
+
+.userHelp li.uHdes:hover {
+    border-width: 0;
+    width: 100px;
+    height: 50px;
+    border-radius: 0;
+}
+
+.userHelp li {
+    color:#E7EFF3;
+    border-bottom: 1px solid #000;
+    cursor: pointer;
+    text-align: center;
+    line-height: 50px;
+    font-size: 10px;
+    width: 100px;
+    height: 50px;
+    overflow: hidden;
+    background-color: rgba(0,87,146,0.7);
+    transition: color 0.7s;
+}
+
+.userHelp li:hover {
+    color: #45EBA5;
+}

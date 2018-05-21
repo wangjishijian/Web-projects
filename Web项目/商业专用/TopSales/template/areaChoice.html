@@ -1,0 +1,23 @@
+<div class="city_box"   ng-blur="areaBoxBlur()"  ng-focus="areaShow=true"tabindex='-1'  id="cityBox">
+  <!--  <input class="form-control" type="text" ng-model="areaObj.areaName" ng-focus="areaShow=true" id="areaInput">-->
+    <div class="form-control"  ng-bind="areaObj.areaName"></div>
+    <div class="selectList clearfix" ng-show="areaShow">
+        <ul class="ulhdDown clearfix" >
+            <li  ng-class="{ currentLi : isTag=='province'}" ng-click="isTag='province'">省份</li>
+            <li  ng-class="{ currentLi : isTag=='city'}" ng-click="isTag='city'">城市</li>
+            <li  ng-class="{ currentLi : isTag=='district'}" ng-click="isTag='district'">区县</li>
+        </ul>
+        <ul class="ulArea ulArea0" ng-show="isTag=='province'">
+            <li  ng-repeat= "province in provinceList track by $index" ng-class="{currentLei :areaObj.provinceId==province.id }" ng-bind="province.nameCn" ng-click="provinceClick(province)"></li>
+        </ul>
+        <ul class="ulArea ulArea1" ng-show="isTag=='city'">
+            <li  ng-repeat= "city in cityList track by $index" ng-class="{currentLei :areaObj.cityId==city.id }" ng-bind="city.nameCn" ng-click="cityClick(city)"></li>
+        </ul>
+        <ul class="ulArea ulArea2" ng-show="isTag=='district'">
+            <li  ng-repeat= "district in districtList track by $index" ng-class="{currentLei :areaObj.districtId==district.id }" ng-bind="district.nameCn" ng-click="districtClick(district)"></li>
+        </ul>
+        <div >
+            <span class="btn btn-default" ng-click="areaClear();">清空</span>
+        </div>
+    </div>
+</div>
